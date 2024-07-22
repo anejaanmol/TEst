@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <button id="toggle-sidebar" class="toggle-btn"><i class="fas fa-bars"></i></button>
+            <h1>ProLearner - Admin Dashboard</h1>
+            <div class="profile">
+                <img src="./img/icons/admin.png" alt="Profile Picture">
+                <span id="aname"></span>
+            </div>
+        </header>
+        <div class="main-content">
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li><a href="#overview"><i class="fas fa-chart-pie"></i> Overview</a></li>
+                    <li><a href="#students"><i class="fas fa-user-graduate"></i> Students</a></li>
+                    <li><a href="#teachers"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
+                    <li><a href="#courses"><i class="fas fa-book"></i> Courses</a></li>
+                    <li><a href="#assignments"><i class="fas fa-tasks"></i> Assignments</a></li>
+                    <li><a href="#doubts"><i class="fas fa-question-circle"></i> Doubts</a></li>
+                </ul>
+            </aside>
+            <div class="content" id="content">
+                <div class="section-container">
+                    <section id="overview" class="box">
+                        <h2>Overview</h2>
+                        <div class="chart-container">
+                            <canvas id="overviewChart"></canvas>
+                        </div>
+                    </section>
+                    <section id="sessions" class="box">
+                        <h2>All Upcoming Sessions</h2>
+                        <div class="sessions-list">
+                            <!-- Courses Dynamic Loading -->
+                        </div>
+                    </section>
+                    <section id="schedule-session" class="box">
+                        <h2>Schedule Session</h2>
+                        <div class="login-container">
+                            <form id="scheduleSessionForm" onsubmit="scheduleSession(event)">
+                                <label for="studentEmail">Student Email</label>
+                                <input type="email" id="student-email" name="student-email" required>
+
+                                <label for="teacherEmail">Teacher Email</label>
+                                <input type="email" id="teacher-email" name="teacher-email" required>
+
+                                <label for="course">Course</label>
+                                <input type="text" id="course" name="course" required>
+
+                                <label for="Date">Date</label>
+                                <input type="date" id="session-date" name="session-date" required>
+
+                                <label for="Date">Time</label>
+                                <input type="time" id="session-time" name="session-time" required>
+
+                                <label for="Link">Link</label>
+                                <input type="text" id="session-link" name="session-link" required>
+
+                                <button type="submit" class="content-btn">Submit</button>
+                            </form>
+                        </div>
+                    </section>
+                    <section id="schedule-session" class="box">
+                        <h2>Transaction</h2>
+                        <div class="login-container">
+                            <form id="transaction" onsubmit="performTranscation(event)">
+                                <label for="studentEmail">Student Email</label>
+                                <input type="email" id="student-email" name="student-email" required>
+
+                                <label for="teacherEmail">Teacher Email</label>
+                                <input type="email" id="teacher-email" name="teacher-email" required>
+
+                                <label for="time">Time</label>
+                                <input type="number" id="session-time" name="session-time" required>
+
+                                <button type="submit" class="content-btn">Confirm</button>
+                            </form>
+                        </div>
+                    </section>
+                    <section id="teachers" class="box">
+                        <h2>Teachers</h2>
+                        <div class="teachers-list">
+                            <!-- Teachers Dynamic Loading -->
+                        </div>
+                    </section>
+                    <section id="students" class="box">
+                        <h2>Students</h2>
+                        <div class="students-list">
+                            <!-- Students Dynamic Loading -->
+                        </div>
+                    </section>
+                    <section id="courses" class="box">
+                        <h2>Courses</h2>
+                        <div class="courses-list">
+                            <!-- Courses Dynamic Loading -->
+                        </div>
+                    </section>
+                    <section id="assignments" class="box">
+                        <h2>Assignments</h2>
+                        <div class="assignments-list">
+                            <!-- Assignments Dynamic Loading -->
+                        </div>
+                    </section>
+                    <section id="doubts" class="box">
+                        <h2>Doubts</h2>
+                        <div class="doubts-list">
+                            <!-- Doubts Dynamic Loading -->
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/css/student.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.getElementById('toggle-sidebar').addEventListener('click', function () {
+            var sidebar = document.getElementById('sidebar');
+            var content = document.getElementById('content');
+            sidebar.classList.toggle('visible');
+            content.classList.toggle('shifted');
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <button id="toggle-sidebar" class="toggle-btn"><i class="fas fa-bars"></i></button>
+            <h1>ProLearner- Student's Dashboard</h1>
+            <div class="profile">
+                <img src="./img/icons/student.png" alt="Profile Picture">
+                <span id="sname">Student</span>
+            </div>
+        </header>
+        <div class="main-content">
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li><a href="#profile-info"><i class="fas fa-user"></i> Profile Info</a></li>
+                    <li><a href="#hours"><i class="fas fa-clock"></i> Number of Hours</a></li>
+                    <li><a href="#teacher-assigned"><i class="fas fa-chalkboard-teacher"></i> Teacher Assigned</a></li>
+                    <li><a href="#courses-enrolled"><i class="fas fa-book"></i> Courses Enrolled</a></li>
+                    <li><a href="#teacher-comments"><i class="fas fa-comments"></i> Teacher Comments</a></li>
+                    <li><a href="#upcoming-session"><i class="fas fa-calendar-alt"></i> Upcoming Session</a></li>
+                    <li><a href="#teacher-teaching"><i class="fas fa-user-tie"></i> Teacher Teaching</a></li>
+                    <li><a href="#comments-section"><i class="fas fa-comment-dots"></i> Doubts Section</a></li>
+                    <li><a style="cursor: pointer;" onclick="transitionToPage('plan')"><i
+                                class="fas fa-credit-card"></i> Recharge</a></li>
+                    <!-- recharge ka page link krdena -->
+                </ul>
+            </aside>
+            <div class="content" id="content">
+                <div class="section-container">
+                    <section id="profile-info" class="box">
+                        <h2>Profile Info</h2>
+                    </section>
+                    <section id="hours" class="box">
+                        <h2>Number of Hours</h2>
+                        <div class="chart-container">
+                            <canvas id="hoursChart"></canvas>
+                        </div>
+                    </section>
+                    <section id="upcoming-session" class="box">
+                        <h2>Upcoming Session</h2>
+                        <div class="session-details"></div>
+                    </section>
+                    <section id="teacher-assigned" class="box">
+                        <h2>Teacher Assigned</h2>
+                        <div class="teacher-info">
+                            <img src="./img/icons/tutor.png" alt="Teacher Photo" id="teacher-photo">
+                            <div class="teacher-details">
+                                <p><strong>Name:</strong> <span id="teacher-name"></span></p>
+                                <p><strong>Email:</strong> <span id="teacher-email"></span></p>
+                                <p><strong>Subject:</strong> <span id="teacher-subject"></span></p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="courses-enrolled" class="box">
+                        <h2>Courses Enrolled</h2>
+                        <div class="courses-list">
+                            <!-- Course details dynamically loaded similarly in other sections-->
+                        </div>
+                    </section>
+                    <section id="teacher-comments" class="box">
+                        <h2>Teacher Comments</h2>
+                        <div class="comments-list"></div>
+                    </section>
+                    <section id="teacher-teaching" class="box">
+                        <h2>Teacher Teaching</h2>
+                        <div class="teaching-details"></div>
+                    </section>
+                    <section id="comments-section" class="box">
+                        <h2>Doubts Section</h2>
+                        <div class="chat-box">
+                            <div class="chat-history" id="chat-history">
+                                <!-- Chat history here -->
+                            </div>
+                            <div class="chat-input">
+                                <textarea id="doubt-input" placeholder="Type your doubt here..."></textarea>
+                                <button id="send-doubt">Send</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/student.js"></script>
+</body>
+
+</html>

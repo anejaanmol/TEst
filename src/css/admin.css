@@ -1,0 +1,341 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: #f1f1f1;
+    color: rgb(0,135,189);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: rgb(0,135,189);
+    font-size: 24px;
+    cursor: pointer;
+}
+.toggle-btn:hover{
+    background-color: rgb(0,135,189);
+    color: #f1f1f1;
+
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #e0e0e0;
+    border-right: 1px solid #333;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.visible {
+    transform: translateX(0);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: rgb(0,135,189);
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.sidebar ul li a:hover {
+    color: #fff;
+    background-color: rgb(0,135,189);
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgb(0,135,189);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+    margin-left: 270px;
+}
+
+.section-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+section {
+    margin: 10px 0;
+}
+
+h2 {
+    color: rgb(0,135,189);
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #000000;
+}
+
+.chart-container { 
+    position: relative;
+    width: 100%;
+    max-width: 600px; 
+    height: 350px; 
+    margin: 0 auto;
+}
+
+#overviewChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.students-list, .teachers-list, .courses-list, .assignments-list, .doubts-list {
+    display: grid;
+    gap: 20px;
+}
+
+.student-item, .teacher-item, .course-item, .assignment-item, .doubt-item {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px;
+}
+
+.student-item:hover, .teacher-item:hover, .course-item:hover, .assignment-item:hover, .doubt-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.student-item h3, .teacher-item h3, .course-item h3, .assignment-item h3, .doubt-item h3 {
+    color: #000000;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.student-item p, .teacher-item p, .course-item p, .assignment-item p, .doubt-item p {
+    margin: 0;
+    color: #000000;
+}
+
+.assignments-list, .doubts-list, .students-list, .teachers-list, .courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.assignment-item {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.assignment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.assignment-item h3 {
+    color: #000000;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.assignment-item p {
+    margin: 0;
+    color: #000000;
+}
+
+.login-container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0,135,189);
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: rgb(0,135,189);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 0.5rem 0;
+    color: #000000;
+}
+
+input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgb(0,135,189);
+    border-radius: 5px;
+    background: rgba(245, 245, 245, 0.7);
+    color: #000000;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 5px rgb(0,135,189);
+}
+
+input:focus {
+    border-color: rgb(0,135,189);
+}
+
+button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background: rgb(0,135,189);
+    color: #000000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background: rgb(0,120,170);
+    box-shadow: 0 0 20px rgb(0,135,189);
+}
+
+.content-btn{
+        background: rgb(0,120,170);
+        border: none;
+        color: rgba(0,135,189,0.99);
+        font-size: 24px;
+        cursor: pointer;
+        border-radius: 50px;
+}
+.content-btn:hover{
+    background-color: rgb(0,135,189);
+    color: #f1f1f1;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .section-container {
+        grid-template-columns: 1fr;
+    }
+    .content {
+        margin-left: 0;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .sidebar.visible {
+        transform: translateX(0);
+    }
+    .content.shifted {
+        margin-left: 0;
+    }
+    .header h1 {
+        font-size: 18px;
+    }
+    .toggle-btn {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 16px;
+    }
+    .toggle-btn {
+        font-size: 16px;
+    }
+    .profile img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#doubts {
+    overflow: auto;
+    height: 500px;
+}
+
+#students {
+    overflow: auto;
+    height: 500px;
+}
+
+#teachers {
+    overflow: auto;
+    height: 500px;
+}
+
+#sessions {
+    overflow: auto;
+    height: 500px;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), #0d0d0d;
+        }
+
+        .login-container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 0.5rem 0;
+        }
+
+        input {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #00ff00;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 0 5px #00ff00;
+        }
+
+        input:focus {
+            border-color: #00ff00;
+        }
+
+        button {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            background: #00ff00;
+            color: #0d0d0d;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background: #00e600;
+            box-shadow: 0 0 20px #00ff00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Admin</h1>
+        <form id="adminLoginForm" onsubmit="adminLogin()">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const url = 'http://localhost:3000'
+        function adminLogin() {
+            event.preventDefault();
+            const formData = new FormData(document.getElementById('adminLoginForm'));
+            fetch(url + '/api/admin/auth', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    uid: formData.get('username'),
+                    pass: formData.get('password')
+                }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then((err) => {
+                            throw new Error(err.message);
+                        });
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    localStorage.setItem("admin-token", data.accessToken);
+                    transitionToPage('admin')
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+        };
+
+        window.transitionToPage = function (href) {
+            document.querySelector("body").style.opacity = 0;
+            setTimeout(function () {
+                window.location.href = url + "/" + href;
+            }, 500);
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="./css/teacher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <button id="toggle-sidebar" class="toggle-btn"><i class="fas fa-bars"></i></button>
+            <h1>ProLearner - Teacher's Dashboard</h1>
+            <div class="profile">
+                <img src="./img/icons/tut.png" alt="Profile Picture">
+                <span id="tname"></span>
+            </div>
+        </header>
+        <div class="main-content">
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li><a href="#profile-info"><i class="fas fa-user"></i> Profile Info</a></li>
+                    <li><a href="#students-teaching"><i class="fas fa-users"></i> Students Teaching</a></li>
+                    <li><a href="#hours-taught"><i class="fas fa-clock"></i> Hours Taught</a></li>
+                    <li><a href="#subjects-teaching"><i class="fas fa-book"></i> Subjects Teaching</a></li>
+                    <li><a href="#upcoming-session"><i class="fas fa-calendar-alt"></i> Upcoming Sessions</a></li>
+                    <li><a href="#feedback"><i class="fas fa-comments"></i> Feedback</a></li>
+                    <li><a href="#doubts-section"><i class="fas fa-comment-dots"></i> Doubts Section</a></li>
+                </ul>
+            </aside>
+            <div class="content" id="content">
+                <div class="section-container">
+                    <section id="profile-info" class="box">
+                        <h2>Profile Info</h2>
+                        <div class="profile-details">
+                            <p><strong>Name:</strong> <span id="teacher-name"></span></p>
+                            <p><strong>Email:</strong> <span id="teacher-email"></span></p>
+                            <p><strong>Total Hours Taught:</strong> <span id="teacher-hours"></span></p>
+                        </div>
+                    </section>
+                    <section id="hours-taught" class="box">
+                        <h2>Hours Taught</h2>
+                        <div class="chart-container">
+                            <canvas id="hoursChart"></canvas>
+                        </div>
+                    </section>
+                    <section id="upcoming-session" class="box">
+                        <h2>Upcoming Sessions</h2>
+                        <div class="session-details">
+                            <!-- Dynamically loaded upcoming session details -->
+                        </div>
+                    </section>
+                    <section id="students-teaching" class="box">
+                        <h2>Students Teaching</h2>
+                        <div class="students-list">
+                            <!-- Dynamically loaded student details -->
+                        </div>
+                    </section>
+                    <section id="subjects-teaching" class="box">
+                        <h2>Subjects Teaching</h2>
+                        <div class="subjects-list">
+                            <!-- Dynamically loaded subject details -->
+                        </div>
+                    </section>
+                    <section id="feedback" class="box">
+                        <h2>Feedback</h2>
+                        <div class="feedback-list">
+                            <!-- Dynamically loaded feedback details -->
+                        </div>
+                    </section>
+                    <section id="doubts-section" class="box">
+                        <h2>Doubts Section</h2>
+                        <div class="chat-box">
+                            <div class="chat-history" id="chat-history">
+                                <!-- Chat history here -->
+                            </div>
+                            <div class="chat-input">
+                                <textarea id="reply-input" placeholder="Type your reply here..."></textarea>
+                                <button id="send-reply">Send</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/teacher.js"></script>
+</body>
+</html>

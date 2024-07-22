@@ -1,0 +1,241 @@
+{
+    "initial": {
+        "text": "Tell us more about yourself",
+        "answers": [
+            "I'm a Student",
+            "I'm a Parent or Guardian"
+        ]
+    },
+    "I'm a Student": {
+        "text": "What grade level are you in?",
+        "answers": [
+            "Elementary",
+            "Middle/Junior High School",
+            "High School",
+            "University",
+            "Adult / Professional"
+        ]
+    },
+    "I'm a Parent or Guardian": {
+        "text": "What grade level is your child in?",
+        "answers": [
+            " Elementary",
+            " Middle/Junior High School",
+            " High School",
+            " University"
+        ]
+    },
+    "Elementary": {
+        "text": "Which best describes why you're looking for help?",
+        "answers": [
+            "Struggling in class",
+            "Hoping to get ahead",
+            "Need to get specific score/grade"
+        ]
+    },
+    "Middle/Junior High School": {
+        "text": "Which best describes why you're looking for help?",
+        "answers": [
+            "Struggling in class",
+            "Hoping to get ahead",
+            "Need to get specific score/grade"
+        ]
+    },
+    "High School": {
+        "text": "Which best describes why you're looking for help?",
+        "answers": [
+            "Struggling in class",
+            "Hoping to get ahead",
+            "Need to get specific score/grade"
+        ]
+    },
+    "University": {
+        "text": "Which best describes why you're looking for help?",
+        "answers": [
+            "Struggling with a subject",
+            "Hoping to get ahead",
+            "Preparing for a test",
+            "Personal Development",
+            "Other"
+        ]
+    },
+    "Adult / Professional": {
+        "text": "Which best describes why you're looking for help?",
+        "answers": [
+            "Struggling with a subject",
+            "Hoping to get ahead",
+            "Preparing for a test",
+            "Personal Development",
+            "Other"
+        ]
+    },
+    "Struggling in class": {
+        "text": "How much help do you think you'll need to achieve your goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "Hoping to get ahead": {
+        "text": "How much help do you think you'll need to achieve your goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "Need to get specific score/grade": {
+        "text": "How much help do you think you'll need to achieve your goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "Struggling with a subject": {
+        "text": "How much help do you think you'll need to achieve your goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "Preparing for a test": {
+        "text": "How much help do you think you'll need to achieve your goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "Personal Development": {
+        "text": "How much help do you think you'll need to achieve your goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "A lot of help": {
+        "text": "How soon do you need help?",
+        "answers": [
+            "Right away",
+            "In a few weeks",
+            "I am not sure"
+        ]
+    },
+    "A moderate amount": {
+        "text": "How soon do you need help?",
+        "answers": [
+            "Right away",
+            "In a few weeks",
+            "I am not sure"
+        ]
+    },
+    "Just a little": {
+        "text": "How soon do you need help?",
+        "answers": [
+            "Right away",
+            "In a few weeks",
+            "I am not sure"
+        ]
+    },
+    "Not sure": {
+        "text": "How soon do you need help?",
+        "answers": [
+            "Right away",
+            "In a few weeks",
+            "I am not sure"
+        ]
+    },
+    " Elementary": {
+        "text": "Which best describes why your student needs help?",
+        "answers": [
+            "They're struggling in class",
+            "They're hoping to get ahead",
+            "They need a specific score/grade"
+        ]
+    },
+    " Middle/Junior High School": {
+        "text": "Which best describes why your student needs help?",
+        "answers": [
+            "They're struggling in class",
+            "They're hoping to get ahead",
+            "They need a specific score/grade"
+        ]
+    },
+    " High School": {
+        "text": "Which best describes why your student needs help?",
+        "answers": [
+            "They're struggling in class",
+            "They're hoping to get ahead",
+            "They need a specific score/grade"
+        ]
+    },
+    " University": {
+        "text": "Which best describes why your student needs help?",
+        "answers": [
+            "They're struggling in class",
+            "They're hoping to get ahead",
+            "They need a specific score/grade"
+        ]
+    },
+    "They're struggling in class": {
+        "text": "How much help do you think they need to achieve their goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "They're hoping to get ahead": {
+        "text": "How much help do you think they need to achieve their goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "They need a specific score/grade": {
+        "text": "How much help do you think they need to achieve their goal?",
+        "answers": [
+            "A lot of help",
+            "A moderate amount",
+            "Just a little",
+            "Not sure"
+        ]
+    },
+    "Right away": {
+        "text": "",
+        "answers": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "In a few weeks": {
+        "text": "",
+        "answers": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "I am not sure": {
+        "text": "",
+        "answers": [
+            "",
+            "",
+            ""
+        ]
+    }
+}
